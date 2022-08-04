@@ -42,8 +42,6 @@ module.exports = {
         mainWindow = page;
       } else if (page.url().includes('tests')) {
         mainWindow = page;
-      } else if (page.url().includes('e2e')) {
-        mainWindow = page;
       } else if (page.url().includes('extension')) {
         metamaskWindow = page;
       }

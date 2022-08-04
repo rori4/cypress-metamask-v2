@@ -23,18 +23,42 @@ module.exports.metametricsPageElements = {
   optOutAnalyticsButton,
 };
 
-const firstTimeFlowFormPage = '.create-new-vault__form';
-const secretWordsInput = `${firstTimeFlowFormPage} .import-srp__srp-word input[data-testid="import-srp__srp-word-%"]`;
+const firstTimeFlowFormPage = '.first-time-flow';
+const noThanksMetametricsButton = `${firstTimeFlowFormPage} .btn-secondary`;
+const word1Input = `${firstTimeFlowFormPage} #import-srp__srp-word-0`;
+const word2Input = `${firstTimeFlowFormPage} #import-srp__srp-word-1`;
+const word3Input = `${firstTimeFlowFormPage} #import-srp__srp-word-2`;
+const word4Input = `${firstTimeFlowFormPage} #import-srp__srp-word-3`;
+const word5Input = `${firstTimeFlowFormPage} #import-srp__srp-word-4`;
+const word6Input = `${firstTimeFlowFormPage} #import-srp__srp-word-5`;
+const word7Input = `${firstTimeFlowFormPage} #import-srp__srp-word-6`;
+const word8Input = `${firstTimeFlowFormPage} #import-srp__srp-word-7`;
+const word9Input = `${firstTimeFlowFormPage} #import-srp__srp-word-8`;
+const word10Input = `${firstTimeFlowFormPage} #import-srp__srp-word-9`;
+const word11Input = `${firstTimeFlowFormPage} #import-srp__srp-word-10`;
+const word12Input = `${firstTimeFlowFormPage} #import-srp__srp-word-11`;
 const passwordInput = `${firstTimeFlowFormPage} #password`;
 const confirmPasswordInput = `${firstTimeFlowFormPage} #confirm-password`;
-const termsCheckbox = `${firstTimeFlowFormPage} .create-new-vault__terms input`;
+const termsCheckbox = `${firstTimeFlowFormPage} #create-new-vault__terms-checkbox`;
 const importButton = `${firstTimeFlowFormPage} .create-new-vault__submit-button`;
 const newPasswordInput = `${firstTimeFlowFormPage} #create-password`;
 const newSignupCheckbox = `${firstTimeFlowFormPage} .first-time-flow__checkbox`;
 
 module.exports.firstTimeFlowFormPageElements = {
   firstTimeFlowFormPage,
-  secretWordsInput,
+  noThanksMetametricsButton,
+  word1Input,
+  word2Input,
+  word3Input,
+  word4Input,
+  word5Input,
+  word6Input,
+  word7Input,
+  word8Input,
+  word9Input,
+  word10Input,
+  word11Input,
+  word12Input,
   passwordInput,
   confirmPasswordInput,
   termsCheckbox,

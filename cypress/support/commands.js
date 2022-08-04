@@ -83,16 +83,24 @@ Cypress.Commands.add('confirmMetamaskSignatureRequest', () => {
   return cy.task('confirmMetamaskSignatureRequest');
 });
 
+Cypress.Commands.add('confirmMetamaskEncryptionPublicKeyRequest', () => {
+  return cy.task('confirmMetamaskEncryptionPublicKeyRequest');
+});
+
+Cypress.Commands.add('rejectMetamaskEncryptionPublicKeyRequest', () => {
+  return cy.task('rejectMetamaskEncryptionPublicKeyRequest');
+});
+
+Cypress.Commands.add('confirmMetamaskDecryptionRequest', () => {
+  return cy.task('confirmMetamaskDecryptionRequest');
+});
+
+Cypress.Commands.add('rejectMetamaskDecryptionRequest', () => {
+  return cy.task('rejectMetamaskDecryptionRequest');
+});
+
 Cypress.Commands.add('rejectMetamaskSignatureRequest', () => {
   return cy.task('rejectMetamaskSignatureRequest');
-});
-
-Cypress.Commands.add('confirmMetamaskTypedV4SignatureRequest', () => {
-  return cy.task('confirmMetamaskTypedV4SignatureRequest');
-});
-
-Cypress.Commands.add('rejectMetamaskTypedV4SignatureRequest', () => {
-  return cy.task('rejectMetamaskTypedV4SignatureRequest');
 });
 
 Cypress.Commands.add('confirmMetamaskPermissionToSpend', () => {
@@ -133,10 +141,6 @@ Cypress.Commands.add('rejectMetamaskToSwitchNetwork', () => {
 
 Cypress.Commands.add('allowMetamaskToAddAndSwitchNetwork', () => {
   return cy.task('allowMetamaskToAddAndSwitchNetwork');
-});
-
-Cypress.Commands.add('lockMetamask', () => {
-  return cy.task('lockMetamask');
 });
 
 Cypress.Commands.add('unlockMetamask', (password = 'Tester@1234') => {

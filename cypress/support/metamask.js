@@ -29,7 +29,7 @@ const {
 const {
   confirmationPageElements,
 } = require('../pages/metamask/confirmation-page');
-const { setNetwork, getNetwork } = require('../support/helpers');
+const { setNetwork, getNetwork } = require('../helpers');
 
 let walletAddress;
 let switchBackToCypressWindow;
@@ -66,12 +66,6 @@ module.exports = {
     }
     return true;
   },
-  lock: async () => {
-    await module.exports.fixBlankPage();
-    await puppeteer.waitAndClick(mainPageElements.accountMenu.button);
-    await puppeteer.waitAndClick(mainPageElements.accountMenu.lockButton);
-    return true;
-  },
   unlock: async password => {
     await module.exports.fixBlankPage();
     await puppeteer.waitAndType(unlockPageElements.passwordInput, password);
@@ -81,18 +75,57 @@ module.exports = {
     return true;
   },
   importWallet: async (secretWords, password) => {
-    const words = secretWords.split(' ');
-    await puppeteer.waitAndClick(firstTimeFlowPageElements.importWalletButton);
     await puppeteer.waitAndClick(metametricsPageElements.optOutAnalyticsButton);
-
-    for (const [index, word] of words.entries()) {
-      const selector = firstTimeFlowFormPageElements.secretWordsInput.replace('%',index);
-      await puppeteer.waitAndType(
-        selector,
-        word,
-      );
-    }
-
+    await puppeteer.waitAndClick(firstTimeFlowPageElements.importWalletButton);
+    var text = secretWords.split(" ");
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word1Input,
+      text[0],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word2Input,
+      text[1],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word3Input,
+      text[2],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word4Input,
+      text[3],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word5Input,
+      text[4],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word6Input,
+      text[5],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word7Input,
+      text[6],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word8Input,
+      text[7],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word9Input,
+      text[8],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word10Input,
+      text[9],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word11Input,
+      text[10],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word12Input,
+      text[11],
+    );
     await puppeteer.waitAndType(
       firstTimeFlowFormPageElements.passwordInput,
       password,
@@ -411,28 +444,10 @@ module.exports = {
     await puppeteer.metamaskWindow().waitForTimeout(3000);
     return true;
   },
-  confirmTypedV4SignatureRequest: async () => {
-    const notificationPage = await puppeteer.switchToMetamaskNotification()
-    await puppeteer.waitAndClick(
-        signaturePageElements.confirmTypedV4SignatureRequestButton,
-        notificationPage,
-      );
-    await puppeteer.metamaskWindow().waitForTimeout(3000);
-    return true;
-  },
   rejectSignatureRequest: async () => {
     const notificationPage = await puppeteer.switchToMetamaskNotification();
     await puppeteer.waitAndClick(
       signaturePageElements.rejectSignatureRequestButton,
-      notificationPage,
-    );
-    await puppeteer.metamaskWindow().waitForTimeout(1000);
-    return true;
-  },
-  rejectTypedV4SignatureRequest: async () => {
-    const notificationPage = await puppeteer.switchToMetamaskNotification();
-    await puppeteer.waitAndClick(
-      signaturePageElements.rejectTypedV4SignatureRequestButton,
       notificationPage,
     );
     await puppeteer.metamaskWindow().waitForTimeout(1000);
@@ -480,15 +495,15 @@ module.exports = {
     // todo: remove waitForTimeout below after improving switchToMetamaskNotification
     await puppeteer.metamaskWindow().waitForTimeout(1000);
     const notificationPage = await puppeteer.switchToMetamaskNotification();
-    if (gasConfig && gasConfig.gasFee) {
+    if (isKovanTestnet) {
       await puppeteer.waitAndSetValue(
-        gasConfig.gasFee.toString(),
+        '1',
         confirmPageElements.gasFeeInput,
         notificationPage,
       );
-    } else if (isKovanTestnet) {
+    } else if (gasConfig && gasConfig.gasFee) {
       await puppeteer.waitAndSetValue(
-        '1',
+        gasConfig.gasFee.toString(),
         confirmPageElements.gasFeeInput,
         notificationPage,
       );
@@ -634,12 +649,6 @@ module.exports = {
       (await puppeteer.metamaskWindow().$(unlockPageElements.unlockPage)) ===
       null
     ) {
-
-      if( (await puppeteer.metamaskWindow().$(mainPageElements.walletOverview)) !== null)  {
-        await puppeteer.switchToCypressWindow();
-        return true;
-      }
-
       await module.exports.confirmWelcomePage();
       if (secretWordsOrPrivateKey.includes(' ')) {
         // secret words
@@ -649,11 +658,11 @@ module.exports = {
         await module.exports.createWallet(password);
         await module.exports.importAccount(secretWordsOrPrivateKey);
       }
-      if (isCustomNetwork) {
-        await module.exports.addNetwork(network);
-      } else {
-        await module.exports.changeNetwork(network);
-      }
+      // if (isCustomNetwork) {
+      //   await module.exports.addNetwork(network);
+      // } else {
+      //   await module.exports.changeNetwork(network);
+      // }
       walletAddress = await module.exports.getWalletAddress();
       await puppeteer.switchToCypressWindow();
       return true;
