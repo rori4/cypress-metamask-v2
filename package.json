@@ -1,6 +1,6 @@
 {
-  "name": "cypress-metamask-v2",
-  "version": "1.7.1",
+  "name": "@pablo-euler/cypress-metamask-v2",
+  "version": "1.0.0",
   "main": "cypress/support/commands.js",
   "license": "MIT",
   "keywords": [
@@ -34,6 +34,8 @@
     "bytes32": "0.0.3",
     "cross-zip": "^4.0.0",
     "cypress": "^9.5.3",
+    "cypress-metamask-v2": "github:pablo-euler/cypress-metamask-v2#useLocally",
+    "cypress-wait-until": "^1.7.2",
     "dotenv": "^16.0.0",
     "eslint-plugin-cypress": "^2.11.3",
     "ethers": "^5.1.4",
@@ -43,8 +45,7 @@
     "standard": "^16.0.3",
     "start-server-and-test": "^1.12.2",
     "superstatic": "^7.1.0",
-    "synthetix-js": "^2.66.0",
-    "cypress-wait-until": "^1.7.2"
+    "synthetix-js": "^2.66.0"
   },
   "repository": {
     "type": "git",
