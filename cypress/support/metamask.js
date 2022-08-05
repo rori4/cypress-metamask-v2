@@ -654,14 +654,14 @@ module.exports = {
       null
     ) {
       await module.exports.confirmWelcomePage();
-      if (secretWordsOrPrivateKey.includes(' ')) {
+      // if (secretWordsOrPrivateKey.includes(' ')) {
         // secret words
         await module.exports.importWallet(secretWordsOrPrivateKey, password);
-      } else {
-        // private key
-        await module.exports.createWallet(password);
-        await module.exports.importAccount(secretWordsOrPrivateKey);
-      }
+      // } else {
+      //   // private key
+      //   await module.exports.createWallet(password);
+      //   await module.exports.importAccount(secretWordsOrPrivateKey);
+      // }
       // if (isCustomNetwork) {
       //   await module.exports.addNetwork(network);
       // } else {
