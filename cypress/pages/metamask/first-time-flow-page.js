@@ -23,8 +23,15 @@ module.exports.metametricsPageElements = {
   optOutAnalyticsButton,
 };
 
-const firstTimeFlowFormPage = '.first-time-flow';
-const noThanksMetametricsButton = `${firstTimeFlowFormPage} .btn-secondary`;
+// const firstTimeFlowFormPage = '.first-time-flow';
+const firstTimeFlowFormPage = '.create-new-vault__form';
+const secretWordsInput = `${firstTimeFlowFormPage} .import-srp__srp-word input[data-testid="import-srp__srp-word-%"]`;
+const passwordInput = `${firstTimeFlowFormPage} #password`;
+const confirmPasswordInput = `${firstTimeFlowFormPage} #confirm-password`;
+const termsCheckbox = `${firstTimeFlowFormPage} .create-new-vault__terms input`;
+const importButton = `${firstTimeFlowFormPage} .create-new-vault__submit-button`;
+const newPasswordInput = `${firstTimeFlowFormPage} #create-password`;
+const newSignupCheckbox = `${firstTimeFlowFormPage} .first-time-flow__checkbox`;
 const word1Input = `${firstTimeFlowFormPage} #import-srp__srp-word-0`;
 const word2Input = `${firstTimeFlowFormPage} #import-srp__srp-word-1`;
 const word3Input = `${firstTimeFlowFormPage} #import-srp__srp-word-2`;
@@ -37,15 +44,10 @@ const word9Input = `${firstTimeFlowFormPage} #import-srp__srp-word-8`;
 const word10Input = `${firstTimeFlowFormPage} #import-srp__srp-word-9`;
 const word11Input = `${firstTimeFlowFormPage} #import-srp__srp-word-10`;
 const word12Input = `${firstTimeFlowFormPage} #import-srp__srp-word-11`;
-const passwordInput = `${firstTimeFlowFormPage} #password`;
-const confirmPasswordInput = `${firstTimeFlowFormPage} #confirm-password`;
-const termsCheckbox = `${firstTimeFlowFormPage} #create-new-vault__terms-checkbox`;
-const importButton = `${firstTimeFlowFormPage} .create-new-vault__submit-button`;
-const newPasswordInput = `${firstTimeFlowFormPage} #create-password`;
-const newSignupCheckbox = `${firstTimeFlowFormPage} .first-time-flow__checkbox`;
 
 module.exports.firstTimeFlowFormPageElements = {
   firstTimeFlowFormPage,
+  secretWordsInput,
   noThanksMetametricsButton,
   word1Input,
   word2Input,
