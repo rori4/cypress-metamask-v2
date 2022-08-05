@@ -25,7 +25,7 @@ module.exports.metametricsPageElements = {
 
 // const firstTimeFlowFormPage = '.first-time-flow';
 const firstTimeFlowFormPage = '.create-new-vault__form';
-const secretWordsInput = `${firstTimeFlowFormPage} input[placeholde="Paste Secret Recovery Phrase from clipboard"]`;
+const secretWordsInput = `${firstTimeFlowFormPage} input[placeholder="Paste Secret Recovery Phrase from clipboard"]`;
 const passwordInput = `${firstTimeFlowFormPage} #password`;
 const confirmPasswordInput = `${firstTimeFlowFormPage} #confirm-password`;
 const termsCheckbox = `${firstTimeFlowFormPage} .create-new-vault__terms input`;
