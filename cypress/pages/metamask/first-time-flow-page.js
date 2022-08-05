@@ -23,8 +23,8 @@ module.exports.metametricsPageElements = {
   optOutAnalyticsButton,
 };
 
-// const firstTimeFlowFormPage = '.first-time-flow';
-const firstTimeFlowFormPage = '.first-time-flow__form';
+const firstTimeFlowFormPage = '.first-time-flow';
+// const firstTimeFlowFormPage = '.first-time-flow__form';
 const secretWordsInput = `${firstTimeFlowFormPage} input[placeholder="Paste Secret Recovery Phrase from clipboard"]`;
 const passwordInput = `${firstTimeFlowFormPage} #password`;
 const confirmPasswordInput = `${firstTimeFlowFormPage} #confirm-password`;

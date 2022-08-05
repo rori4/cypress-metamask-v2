@@ -75,61 +75,61 @@ module.exports = {
     return true;
   },
   importWallet: async (secretWords, password) => {
-    await puppeteer.waitAndClick(firstTimeFlowPageElements.importWalletButton);
     await puppeteer.waitAndClick(metametricsPageElements.optOutAnalyticsButton);
-    // var text = secretWords.split(" ");
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word1Input,
-    //   text[0],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word2Input,
-    //   text[1],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word3Input,
-    //   text[2],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word4Input,
-    //   text[3],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word5Input,
-    //   text[4],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word6Input,
-    //   text[5],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word7Input,
-    //   text[6],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word8Input,
-    //   text[7],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word9Input,
-    //   text[8],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word10Input,
-    //   text[9],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word11Input,
-    //   text[10],
-    // );
-    // await puppeteer.waitAndType(
-    //   firstTimeFlowFormPageElements.word12Input,
-    //   text[11],
-    // );
+    await puppeteer.waitAndClick(firstTimeFlowPageElements.importWalletButton);
+    var text = secretWords.split(" ");
     await puppeteer.waitAndType(
-      firstTimeFlowFormPageElements.secretWordsInput,
-      secretWords,
+      firstTimeFlowFormPageElements.word1Input,
+      text[0],
     );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word2Input,
+      text[1],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word3Input,
+      text[2],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word4Input,
+      text[3],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word5Input,
+      text[4],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word6Input,
+      text[5],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word7Input,
+      text[6],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word8Input,
+      text[7],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word9Input,
+      text[8],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word10Input,
+      text[9],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word11Input,
+      text[10],
+    );
+    await puppeteer.waitAndType(
+      firstTimeFlowFormPageElements.word12Input,
+      text[11],
+    );
+    // await puppeteer.waitAndType(
+    //   firstTimeFlowFormPageElements.secretWordsInput,
+    //   secretWords,
+    // );
     await puppeteer.waitAndType(
       firstTimeFlowFormPageElements.passwordInput,
       password,
