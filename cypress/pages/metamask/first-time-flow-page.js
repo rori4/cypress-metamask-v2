@@ -48,7 +48,6 @@ const word12Input = `${firstTimeFlowFormPage} #import-srp__srp-word-11`;
 module.exports.firstTimeFlowFormPageElements = {
   firstTimeFlowFormPage,
   secretWordsInput,
-  noThanksMetametricsButton,
   word1Input,
   word2Input,
   word3Input,
