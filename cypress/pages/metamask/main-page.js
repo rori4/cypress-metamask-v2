@@ -2,7 +2,7 @@ const networkSwitcher = {
   button: '.network-display',
   networkName: '.typography',
   dropdownMenuItem: '.dropdown-menu-item',
-  networkButton: number => `.dropdown-menu-item:nth-child(${3 + number})`,
+  networkButton: number => `.dropdown-menu-item:nth-child(${1 + number})`,
 };
 
 const walletOverview = '.wallet-overview';
@@ -66,3 +66,4 @@ module.exports.mainPageElements = {
   importAccount,
   createAccount,
 };
+
