@@ -67,6 +67,10 @@ Cypress.Commands.add('activateCustomNonceInMetamask', () => {
   return cy.task('activateCustomNonceInMetamask');
 });
 
+Cypress.Commands.add('activateTestNetworksInMetamask', () => {
+  return cy.task('activateTestNetworks');
+});
+
 Cypress.Commands.add('resetMetamaskAccount', () => {
   return cy.task('resetMetamaskAccount');
 });
@@ -303,3 +307,4 @@ Cypress.Commands.add(
     return subject;
   },
 );
+

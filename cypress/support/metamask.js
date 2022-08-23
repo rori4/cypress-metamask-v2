@@ -425,6 +425,26 @@ module.exports = {
     await switchToCypressIfNotActive();
     return true;
   },
+  activateTestNetworks: async () => {
+    await switchToMetamaskIfNotActive();
+
+    await puppeteer.waitAndClick(mainPageElements.accountMenu.button);
+    await puppeteer.waitAndClick(mainPageElements.accountMenu.settingsButton);
+    await puppeteer.waitAndClick(settingsPageElements.advancedButton);
+    // if (
+    //   (await puppeteer
+    //     .metamaskWindow()
+    //     .$(advancedPageElements.testNetworkToggleOn)) === null
+    // ) 
+    {
+      await puppeteer.waitAndClick(advancedPageElements.testNetworkToggleOff);
+    }
+    await puppeteer.waitAndClick(settingsPageElements.closeButton);
+    await puppeteer.waitFor(mainPageElements.walletOverview);
+
+    await switchToCypressIfNotActive();
+    return true;
+  },
   resetAccount: async () => {
     await switchToMetamaskIfNotActive();
 

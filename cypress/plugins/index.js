@@ -122,13 +122,17 @@ module.exports = (on, config) => {
       if (process.env.NETWORK_NAME && !network) {
         network = process.env.NETWORK_NAME;
       } else if (!network) {
-        network = 'kovan';
+        network = 'ropsten';
       }
       const networkChanged = await metamask.changeNetwork(network);
       return networkChanged;
     },
     activateCustomNonceInMetamask: async () => {
       const activated = await metamask.activateCustomNonce();
+      return activated;
+    },
+    activateTestNetworks: async () => {
+      const activated = await metamask.activateTestNetworks();
       return activated;
     },
     resetMetamaskAccount: async () => {
