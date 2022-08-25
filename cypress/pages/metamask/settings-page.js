@@ -9,9 +9,9 @@ module.exports.settingsPageElements = {
   closeButton,
 };
 const testNetworkToggleOn =
-  'div.settings-page__body > div:nth-child(7) > div:nth-child(2) > div > label > div:nth-child(1) > input[type=checkbox]';
+  'div.settings-page__body > div:nth-child(7) > div:nth-child(2) > div > label > div:nth-child(1) > input[type=checkbox][value=true]';
 const testNetworkToggleOff =
-  'div.settings-page__body > div:nth-child(7) > div:nth-child(2) > div > label > div:nth-child(1) > input[type=checkbox]';
+  'div.settings-page__body > div:nth-child(7) > div:nth-child(2) > div > label > div:nth-child(1) > input[type=checkbox][value=false]';
 const customNonceToggleOn =
   '[data-testid="advanced-setting-custom-nonce"] .toggle-button--on input';
 const customNonceToggleOff =

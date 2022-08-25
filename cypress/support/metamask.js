@@ -431,11 +431,11 @@ module.exports = {
     await puppeteer.waitAndClick(mainPageElements.accountMenu.button);
     await puppeteer.waitAndClick(mainPageElements.accountMenu.settingsButton);
     await puppeteer.waitAndClick(settingsPageElements.advancedButton);
-    // if (
-    //   (await puppeteer
-    //     .metamaskWindow()
-    //     .$(advancedPageElements.testNetworkToggleOn)) === null
-    // ) 
+    if (
+      (await puppeteer
+        .metamaskWindow()
+        .$(advancedPageElements.testNetworkToggleOn)) === null
+    ) 
     {
       await puppeteer.waitAndClick(advancedPageElements.testNetworkToggleOff);
     }
