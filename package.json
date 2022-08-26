@@ -46,6 +46,20 @@
     "synthetix-js": "^2.66.0",
     "cypress-wait-until": "^1.7.2"
   },
+  "resolutions": {
+    "ansi-regex": "3.0.1",
+    "axios": "0.21.3",
+    "lodash": "4.17.21",
+    "elliptic": "6.5.4",
+    "browserslist": "4.16.5",
+    "got": "11.8.5",
+    "node-fetch": "2.6.7",
+    "trezor-connect": "8.1.12",
+    "underscore": "1.13.2",
+    "ws": "5.2.3",
+    "yargs-parser": "5.0.1",
+    "web3": "1.7.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saxenashivang/cypress-metamask-v2.git"
